@@ -20,6 +20,8 @@ class ScoresController extends AppController
   }
 
   public function index(){
+
+    // $this->Html->css(‘index’);
     $teams_list = $this->Scores->find('list',['keyField'=>'id','valueField'=>'team_name']);
     $teams = $teams_list->toArray();
 
@@ -68,12 +70,31 @@ class ScoresController extends AppController
       }
     }
 
+    for($k=1;$k<=5;$k++){
+      // pr($teams[$k]);
+      $total_team_scores[$teams[$k]]=0;
+      if(array_key_exists(1, array_count_values($results[$k]))){
+        $total_team_scores[$teams[$k]] = $total_team_scores[$teams[$k]] + array_count_values($results[$k])[1] *3;
+      }
+      if(array_key_exists(3, array_count_values($results[$k]))){
+        $total_team_scores[$teams[$k]] = $total_team_scores[$teams[$k]] + array_count_values($results[$k])[3] *1;
+      }
+      $total_team_scores[$teams[$k]] = $total_team_scores[$teams[$k]] + array_sum($scores[$k])/1000;
+      for($l=1;$l<=5;$l++){
+        $total_team_scores[$teams[$k]] = $total_team_scores[$teams[$k]] - ($scores[$l][$k])/1000;
+      }
+    }
+
+    // pr($total_team_scores);
+    arsort($total_team_scores);
+    // pr($total_team_scores);
 
 
     $this->set(compact('scores'));
     $this->set(compact('teams'));
     $this->set(compact('results'));
     $this->set(compact('results_mark'));
+    $this->set(compact('total_team_scores'));
   }
 
 
