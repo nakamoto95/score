@@ -3,7 +3,11 @@
 <h1>得点一覧</h1>
 
 <!-- <?= $this->Html->link('スコア追加', ['action' => 'add']) ?> -->
+<?php
+  echo $this->Html->css('style.css');
+  echo $this->Html->css('index.css');
 
+?>
 <table>
     <tr>
         <th>team name</th>
@@ -61,8 +65,8 @@
         </td>
         <td>
           <?php
-          if(array_key_exists(3, array_count_values($results[$ind[0]]))){
-            echo array_count_values($results[$ind[0]])[3];
+          if(array_key_exists(2, array_count_values($results[$ind[0]]))){
+            echo array_count_values($results[$ind[0]])[2];
           }else{
             echo "0";
           }
@@ -70,8 +74,8 @@
         </td>
         <td>
           <?php
-          if(array_key_exists(2, array_count_values($results[$ind[0]]))){
-            echo array_count_values($results[$ind[0]])[2];
+          if(array_key_exists(3, array_count_values($results[$ind[0]]))){
+            echo array_count_values($results[$ind[0]])[3];
           }else{
             echo "0";
           }

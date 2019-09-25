@@ -343,44 +343,6 @@ pre {
     background: #fafafa;
 }
 
-.index table {
-    margin-top: 0rem;
-    border: 0;
-    width: 100%;
-    table-layout: fixed;
-}
-
-table {
-    background: #fff;
-    margin-bottom: 1.25rem;
-    border: none;
-    table-layout: fixed;
-    width: 100%;
-}
-
-table thead {
-    background: none;
-}
-
-table tr {
-    border-bottom: 1px solid #ebebec;
-}
-
-table thead tr {
-    border-bottom: 1px solid #1798A5;
-}
-
-table tr th {
-    padding: 0.5625rem 0.625rem;
-    font-size: 0.875rem;
-    color: #1798A5;
-    text-align: left;
-    border-bottom: 2px solid #1798A5;
-}
-
-table tr:nth-of-type(even) {
-    background: none;
-}
 
 fieldset {
     border: none;
@@ -521,4 +483,46 @@ div.message.hidden {
 table td {
     vertical-align: top;
     word-break: break-all;
+}
+.index table {
+    margin-top: 0rem;
+    border: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table {
+    background: #fff;
+    margin-bottom: 1.25rem;
+    border: none;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table thead {
+    background: none;
+}
+
+table tr {
+    border-bottom: 1px solid #ebebec;
+}
+
+table thead tr {
+    border-bottom: 1px solid #1798A5;
+}
+
+table tr th {
+    padding: 0.525rem 0.525rem;
+    font-size: 1rem;
+    color: #1798A5;
+    text-align: left;
+    border-bottom: 2px solid #1798A5;
+}
+
+table tr:nth-of-type(even) {
+    background: none;
+}
+
+body{
+  font-size: 10px;
 }
