@@ -7,36 +7,24 @@
 <table>
     <tr>
         <th>team name</th>
-        <th>vs team1</th>
-        <th>vs team2</th>
-        <th>vs team3</th>
-        <th>vs team4</th>
-        <th>vs team5</th>
+        <?php for($i=1;$i<=5;$i++){  ?>
+          <th>
+            <?= $teams[$i]?>
+          </th>
+        <?php }?>
     </tr>
 
-    <!-- ここで、$scores クエリーオブジェクトを繰り返して、記事の情報を出力します -->
+    <?php for($i=1;$i<=5;$i++){  ?>
+      <tr>
+        <th>
+          <?= $teams[$i]?>
+        </th>
+        <?php for($j=1;$j<=5;$j++){ ?>
+          <td>
+            <?= $results_mark[$i][$j]?>
+          </td>
+        <?php }?>
+      </tr>
+    <?php }?>
 
-    <?php foreach ($scores as $score): ?>
-    <tr>
-        <td>
-          <?= $score->team_name ?>
-            <!-- <?= $this->Html->link($score->team_name, ['action' => 'view', $score->score_vs1]) ?> -->
-        </td>
-        <td>
-          <?= $score->score_vs1 ?>
-        </td>
-        <td>
-          <?= $score->score_vs2 ?>
-        </td>
-        <td>
-          <?= $score->score_vs3 ?>
-        </td>
-        <td>
-          <?= $score->score_vs4 ?>
-        </td>
-        <td>
-          <?= $score->score_vs5 ?>
-        </td>
-    </tr>
-    <?php endforeach; ?>
 </table>

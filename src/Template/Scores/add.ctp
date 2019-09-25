@@ -2,7 +2,7 @@
 
 <h1>スコア追加</h1>
 <?php
-    echo $this->Form->create($score);
+    echo $this->Form->create($scores);
     // 今はユーザーを直接記述
     echo $this->Form->select('team_first',$teams);
     echo $this->Form->control('score_team_first');
